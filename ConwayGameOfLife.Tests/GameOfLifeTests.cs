@@ -80,6 +80,25 @@ DDDD".Trim();
 
         }
 
+        [Fact]
+        public void Step_LiveCellWithLessThanTwoLiveNeigbours_Dies()
+        {
+            var gameBoard = new GameBoard(@"
+AADD
+DDAD
+DDDD
+DDDD".Trim());
+            gameBoard.Step();
+
+            var expected = @"
+DADD
+DADD
+DDDD
+DDDD".Trim();
+            Assert.Equal(gameBoard.ToString(), expected);
+
+
+        }
 
 
     }
@@ -129,6 +148,11 @@ DDDD".Trim();
             if (cell == _dead && liveNeighbours == 3)
             {
                 return _alive;
+            }
+
+            if (liveNeighbours < 2)
+            {
+                return _dead;
             }
 
 
