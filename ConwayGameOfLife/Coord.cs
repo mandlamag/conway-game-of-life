@@ -1,4 +1,4 @@
-﻿namespace ConwayGameOfLife.Tests
+﻿namespace ConwayGameOfLife
 {
     public class Coord
     {

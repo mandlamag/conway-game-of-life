@@ -30,6 +30,8 @@ ADDDD
 AAADD
 DDDDD".Trim()
 );
+
+
             Assert.Equal(5, gameBoard.Width);
             Assert.Equal(5, gameBoard.Height);
 
@@ -44,13 +46,18 @@ DDDD
 DDDD
 DDDD
 DDDD".Trim());
-            gameBoard.Step();
+
 
             var expected = @"
 DDDD
 DDDD
 DDDD
 DDDD".Trim();
+
+
+            gameBoard.Step();
+
+
             Assert.Equal(gameBoard.ToString(), expected);
 
         }
@@ -64,13 +71,15 @@ AAAD
 DDDD
 DDDD".Trim());
 
-            gameBoard.Step();
 
             var expected = @"
 AAAD
 AAAD
 DADD
 DDDD".Trim();
+
+
+            gameBoard.Step();
 
 
             Assert.Equal(gameBoard.ToString(), expected);
@@ -84,13 +93,14 @@ AADD
 DDAD
 DDDD
 DDDD".Trim());
-            gameBoard.Step();
 
             var expected = @"
 DADD
 DADD
 DDDD
 DDDD".Trim();
+
+            gameBoard.Step();
 
 
             Assert.Equal(gameBoard.ToString(), expected);
@@ -106,13 +116,15 @@ AAAD
 DADD
 DDDD".Trim());
 
-            gameBoard.Step();
 
             var expected = @"
 AAAD
 ADAD
 AAAD
 DDDD".Trim();
+
+
+            gameBoard.Step();
 
 
             Assert.Equal(gameBoard.ToString(), expected);
