@@ -57,7 +57,6 @@ DDDD
 DDDD".Trim();
             Assert.Equal(gameBoard.ToString(), expected);
 
-
         }
 
         [Fact]
@@ -68,6 +67,7 @@ DADD
 AAAD
 DDDD
 DDDD".Trim());
+
             gameBoard.Step();
 
             var expected = @"
@@ -75,9 +75,9 @@ AAAD
 AAAD
 DADD
 DDDD".Trim();
+
+
             Assert.Equal(gameBoard.ToString(), expected);
-
-
         }
 
         [Fact]
@@ -95,15 +95,36 @@ DADD
 DADD
 DDDD
 DDDD".Trim();
+
+
+            Assert.Equal(gameBoard.ToString(), expected);
+
+        }
+
+        [Fact]
+        public void Step_LiveCellWithMoreThanThreeLiveNeighbours_Dies()
+        {
+            var gameBoard = new GameBoard(@"
+DADD
+AAAD
+DADD
+DDDD".Trim());
+
+            gameBoard.Step();
+
+            var expected = @"
+AAAD
+ADAD
+AAAD
+DDDD".Trim();
+
+
             Assert.Equal(gameBoard.ToString(), expected);
 
 
         }
 
-
     }
-
-
 
 
     public class GameBoard
@@ -132,8 +153,8 @@ DDDD".Trim();
                 {
                     var transformed = CalculateNewState(x, y);
                     thisLine += transformed;
-
                 }
+
                 newState.Add(thisLine);
             }
 
@@ -150,12 +171,12 @@ DDDD".Trim();
                 return _alive;
             }
 
-            if (liveNeighbours < 2)
+            if (cell != _alive) return cell;
+
+            if (liveNeighbours < 2 || liveNeighbours > 3)
             {
                 return _dead;
             }
-
-
 
             return cell;
         }
@@ -199,10 +220,6 @@ DDDD".Trim();
             }
             return sb.ToString().Trim();
         }
-
-
-
-
 
     }
 
