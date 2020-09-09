@@ -37,6 +37,38 @@ DDDDD".Trim()
 
         }
 
+        [Fact]
+        public void Step_ManyCellsAreAllDead_NothingLives()
+        {
+            var gameBoard = new GameBoard(@"
+DDDDDDDD
+DDDDDDDD
+DDDDDDDD
+DDDDDDDD
+DDDDDDDD
+DDDDDDDD
+DDDDDDDD
+DDDDDDDD".Trim());
+
+
+            var expected = @"
+DDDDDDDD
+DDDDDDDD
+DDDDDDDD
+DDDDDDDD
+DDDDDDDD
+DDDDDDDD
+DDDDDDDD
+DDDDDDDD".Trim());
+
+
+            gameBoard.Step();
+
+
+            Assert.Equal(gameBoard.ToString(), expected);
+
+        }
+
 
         [Fact]
         public void Step_CellsAreAllDead_NothingLives()
