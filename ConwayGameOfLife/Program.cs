@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading;
 
 namespace ConwayGameOfLife
 {
@@ -6,7 +7,27 @@ namespace ConwayGameOfLife
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            string initialState = @"
+o.........
+.o.o......
+...o.o....
+.....o....
+..o...o...
+..........
+".Trim();
+
+            var gameBoard = new GameBoard(initialState, 'o', '.');
+
+            for (int i = 0; i < 100; i++)
+            {
+                var output = gameBoard.ToString();
+                Console.Clear();
+                Console.WriteLine(output);
+
+                Thread.Sleep(200);
+                gameBoard.Step();
+
+            }
         }
     }
 }
