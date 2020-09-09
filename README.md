@@ -1,22 +1,29 @@
-﻿# OzowSorter
-
-Foobar is a C# console program that takes any arbitrary piece of text as input, and returns as
-output a sorted list of letters. Punctuation should be ignored, and uppercase
-letters should be mapped to lowercase..
-
-### Example
-```bash
-input: Contrary to popular belief, the pink unicorn flies east. 
-output: aaabcceeeeeffhiiiiklllnnnnooooppprrrrssttttuuy
-```
-
-## Approach
-The project was built in a TDD fashion. Unit tests were used to drive the design. 
+﻿Conway's Game of Life (C#)
+=========
 
 
-## Requirements to Build Project
-Visual Studio 
+`Conway's Game of Life (in C#)` is an implementation of [Conway's Game of Life](http://en.wikipedia.org/wiki/Conway%27s_Game_of_Life) in C# and .NetCore 3.1  with console output.
+It supports randomized board generation, preset loading as well configuratble.
 
+## Usage
+
+
+## Examples
+
+
+### Console output
+
+
+## Installation
+
+`$ wget https://github.com/Inoryy/game-of-life-java/releases/download/0.1/gof-java.jar`
+
+## Requirements
+
+
+## Running the Tests
 
 ## License
-[MIT](https://choosealicense.com/licenses/mit/)
+
+This project is released under the MIT License.
+See the bundled [LICENSE](LICENSE) file for details
