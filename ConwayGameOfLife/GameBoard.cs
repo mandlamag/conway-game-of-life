@@ -10,7 +10,7 @@ namespace ConwayGameOfLife
         private char _alive;
         private char _dead;
         private List<string> _state;
-        public int Width { get { return _state.Max(x => x.Length); } }
+        public int Width { get { return _state.Max(x => x.Replace("\r", "").Length); } }
         public int Height { get { return _state.Count; } }
 
         public GameBoard(string state, char alive = 'A', char dead = 'D')

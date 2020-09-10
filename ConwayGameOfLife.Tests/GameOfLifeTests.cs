@@ -59,7 +59,7 @@ DDDDDDDD
 DDDDDDDD
 DDDDDDDD
 DDDDDDDD
-DDDDDDDD".Trim());
+DDDDDDDD".Trim();
 
 
             gameBoard.Step();
@@ -161,6 +161,37 @@ DDDD".Trim();
 
             Assert.Equal(gameBoard.ToString(), expected);
 
+        }
+
+        [Fact]
+        public void Step_LiveCellWithMoreThanThreeLiveNeighbours_Test()
+        {
+            string initialState = @"
+o.........
+.o.o......
+...o.o....
+....o.....
+..o...o...
+.o.o..o...
+..........".Trim();
+
+            var gameBoard = new GameBoard(initialState, 'o', '.');
+
+
+            var expected = @"
+..........
+..o.o.....
+..oo......
+...ooo....
+..oo.o....
+..o.......
+..........".Trim();
+
+
+            gameBoard.Step();
+
+
+            Assert.Equal(gameBoard.ToString(), expected);
 
         }
 
