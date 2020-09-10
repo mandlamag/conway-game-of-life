@@ -2,26 +2,43 @@
 =========
 
 
-`Conway's Game of Life (in C#)` is an implementation of [Conway's Game of Life](http://en.wikipedia.org/wiki/Conway%27s_Game_of_Life) in C# and .NetCore 3.1  with console output.
+`Conway's Game of Life (in C#)` is an implementation of [Conway's Game of Life](http://en.wikipedia.org/wiki/Conway%27s_Game_of_Life) in C# with console output.
 It supports randomized board generation, preset loading as well configuratble.
 
 ## Usage
+ For a simpler debugging experience open this solution in Visual Studio 2017 - 2019. 
+ Running in VSCode requires a few pluggins to get it working (escially on MacOS)
 
 
 ## Examples
 
+`
+o.........
+.o.o......
+...o.o....
+....o.....
+..o...o...
+.o.o..o...
+..........
+`
 
 ### Console output
+`
+..........
+..o.o.....
+..oo......
+...ooo....
+..oo.o....
+..o.......
+..........
+`
 
 
-## Installation
-
-`$ wget https://github.com/Inoryy/game-of-life-java/releases/download/0.1/gof-java.jar`
 
 ## Requirements
+Visual Studio 2017 - 2019  (I used VS 2019 Community Edition)
+.Net Core 3.0
 
-
-## Running the Tests
 
 ## License
 
